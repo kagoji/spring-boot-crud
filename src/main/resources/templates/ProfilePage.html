@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search Page</title>
+</head>
+<body>
+	<h1 th:text="${msg}"></h1>
+	<h1>Bio Data</h1>
+	
+	<p th:if="${message}" th:text="${message}"></p>
+	<h4>Name: <span  th:text="${biodata?.name}"></span></h4>
+	<h4>Age: <span  th:text="${biodata?.age}"></span></h4>
+	<h4>Details: <span th:if="${biodata}"  th:text="${biodata}"></span></h4>
+</body>
+</html>

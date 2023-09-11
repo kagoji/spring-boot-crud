@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Spring Boot</title>	
+</head>
+<body>
+		<h1 th:text="${msg}"></h1>
+		<hr>
+		<form action="search" method="get">
+		
+			 Serach by ID <input type="text" name="id"></input>
+			<input type="submit" value="search">
+		</form>
+		<hr>
+		<h1>Bio Data</h1>
+		<form action="add" method="post">
+			<h3>Enter Your Name</h3>
+			<input type="text" name="name"></input>
+			<h3>Enter Your Age</h3>
+			<input type="number" name="age"/></input>
+			<input type="submit" value="Add bio">
+		</form>
+</body>
+</html>
