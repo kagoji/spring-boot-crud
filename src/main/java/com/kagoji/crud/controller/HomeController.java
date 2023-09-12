@@ -72,6 +72,32 @@ public class HomeController {
 		return "ProfilePage.html";
 	}
 	
+	@GetMapping("/findByAge")
+	public String findByAgePage(@RequestParam int age, Model model) {
+		
+		ArrayList<Biodata> biodataList= bio.findByAge(age);             
+		
+		if (biodataList != null && !biodataList.isEmpty()) {
+            model.addAttribute("biodataList", biodataList);
+        } else {
+            model.addAttribute("message", "No Data found");
+        }
+		return "AllProfilePage.html";
+	}
+	
+	@GetMapping("/findByName")
+	public String findByNamePage(@RequestParam String name, Model model) {
+		
+		ArrayList<Biodata> biodataList= bio.findName(name);             
+		
+		if (biodataList != null && !biodataList.isEmpty()) {
+            model.addAttribute("biodataList", biodataList);
+        } else {
+            model.addAttribute("message", "No Data found");
+        }
+		return "AllProfilePage.html";
+	}
+	
 	@GetMapping("/edit/{id}")
 	public String EditPage(@PathVariable  int id, Model model) {
 		Biodata biodata= bio.findById(id)
